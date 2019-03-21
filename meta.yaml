@@ -1,0 +1,36 @@
+{% set name = "bashlex" %}
+{% set data = load_setup_py_data() %}
+
+package:
+  name: {{ name }}
+  version: {{ data['version'] }}
+
+source:
+  git_url: "https://github.com/idank/bashlex.git"
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+test:
+  imports:
+    - bashlex 
+
+about:
+  home: https://github.com/rahulkhullar/bashlex
+  license: Open
+  license_family: NONE
+  license_file: 
+  summary: Anaconda assignment
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - rahulkhullar11@gmail.com
